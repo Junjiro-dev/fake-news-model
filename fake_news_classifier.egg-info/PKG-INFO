@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: fake-news-classifier
+Version: 0.0.0
+Summary: Train and deploy fake news model.
+Home-page: UNKNOWN
+Author: Junjiro Obando Molina
+Author-email: jun_j658@hotmail.com
+License: UNKNOWN
+Description: 
+        <<<<<<< HEAD
+        # fake-news-model
+        Deployment of fake news classifier
+        =======
+        fake_news_classifier
+        >>>>>>> r0
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown

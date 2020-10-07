@@ -1,0 +1,11 @@
+Don't forget to add the folder to our python path, 
+so as to be able to use custom modules.
+
+C:\Users\Junjiro\Documents\MEGA\Tesis\Scripts\tesis_environment\Lib\site-packages\_virtualenv.pth
+
+import _virtualenv
+import sys
+import site
+site.addsitedir('../../../code/')
+site.addsitedir('../../code/')
+sys.path.append('../../../code/')

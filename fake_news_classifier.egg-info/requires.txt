@@ -1,0 +1,11 @@
+joblib
+numpy
+pandas
+scikit-learn
+sklearn
+spacy
+repo@ git+https://github.com/explosion/spacy-models/releases/download/es_core_news_md-2.3.1/es_core_news_md-2.3.1.tar.gz#egg=es_core_news_md
+PyICU-2.5-cp38-cp38-win_amd64.whl
+pycld2-0.41-cp38-cp38-win_amd64.whl
+repo@ git+https://github.com/aboSamoor/polyglot.git@master
+flask
