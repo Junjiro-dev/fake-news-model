@@ -7,12 +7,8 @@ Author: Junjiro Obando Molina
 Author-email: jun_j658@hotmail.com
 License: UNKNOWN
 Description: 
-        <<<<<<< HEAD
         # fake-news-model
         Deployment of fake news classifier
-        =======
-        fake_news_classifier
-        >>>>>>> r0
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python
