@@ -1,9 +1,10 @@
 MANIFEST.in
 README.md
 requirements.txt
+requirements_windows.txt
 setup.py
 code/__init__.py
-code/flask_predict.py
+code/main.py
 code/pipeline.py
 code/predict.py
 code/req_test.py
