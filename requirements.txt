@@ -4,8 +4,7 @@ pandas
 scikit-learn
 sklearn
 spacy
-https://github.com/explosion/spacy-models/archive/es_core_news_lg-3.0.0a0.tar.gz
-PyICU
+[-m] spacy download es_core_news_smPyICU
 pycld2
 repo @ git+https://github.com/aboSamoor/polyglot.git@master
 flask
