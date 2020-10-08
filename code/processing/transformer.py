@@ -73,8 +73,10 @@ class WordVectorizerPipeline(TransformerMixin, BaseEstimator):
         return self
 
     def transform(self, X):
+        print("loading spacy model before transforming")
         #Evaluating if spacy spanish model exists
         nlp = spacy.load(self.model)
+        print("evaluating sentiment2 model before transforming")
         #Evaluating if polyglot sentiment module exist
         try:
             text = Text("Evaluando existencia de sentiment2.es",hint_language_code="es").polarity
@@ -91,4 +93,5 @@ class WordVectorizerPipeline(TransformerMixin, BaseEstimator):
 
             copyfile(str(os.getcwd())+"/processing/es.sent.pkl.tar.bz2", createdPath1+"/es.sent.pkl.tar.bz2")
             print("copy finished")
+        print("transforming")
         return numpy.concatenate([singleSampleProcessPipeline(doc, nlp) for doc in X])
