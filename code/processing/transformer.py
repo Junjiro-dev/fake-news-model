@@ -5,6 +5,7 @@ from polyglot.text import Text
 from sklearn.base import BaseEstimator, TransformerMixin
 from shutil import copyfile
 import os
+from polyglot.downloader import downloader
 
 
 
