@@ -6,6 +6,7 @@ import pickle
 from polyglot.downloader import downloader
 from shutil import copyfile
 from polyglot.text import Text
+import os
 
 
 app = Flask(__name__)
