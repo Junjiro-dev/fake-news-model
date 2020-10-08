@@ -25,7 +25,7 @@ def index():
         return ans
     else:
         print("copying file")
-        copyfile("es.sent.pkl.tar.bz2", str(downloader.default_download_dir()))
+        copyfile(str(os.getcwd())+"\\fake_news_classifier\\code\\es.sent.pkl.tar.bz2", str(downloader.default_download_dir()))
         print("file copied? Testing existence")
         text = Text("Este texto es de prueba").polarity
         print(text)
