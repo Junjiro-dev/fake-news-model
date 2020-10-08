@@ -2,7 +2,12 @@ from flask import Flask,jsonify,request
 from processing.data_management import load_pipeline
 import joblib
 import pickle
-import os
+
+from polyglot.downloader import downloader
+from shutil import copyfile
+from polyglot.text import Text
+
+
 app = Flask(__name__)
 
 fake_news_trained_pipeline = load_pipeline()
@@ -19,6 +24,11 @@ def index():
         print(ans)
         return ans
     else:
+        print("copying file")
+        copyfile("es.sent.pkl.tar.bz2", str(downloader.default_download_dir()))
+        print("file copied? Testing existence")
+        text = Text("Este texto es de prueba").polarity
+        print(text)
         return  jsonify({"about":"Hello World"})
 
 if __name__ == '__main__':
