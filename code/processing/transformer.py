@@ -3,9 +3,9 @@ import spacy
 import numpy
 from polyglot.text import Text
 from sklearn.base import BaseEstimator, TransformerMixin
-#Downloader
-from spacy.cli import download as sp_download
-from polyglot.downloader import downloader as pl_download
+from shutil import copyfile
+import os
+
 
 
 def round_prox(number):
@@ -77,11 +77,17 @@ class WordVectorizerPipeline(TransformerMixin, BaseEstimator):
         #Evaluating if polyglot sentiment module exist
         try:
             text = Text("Evaluando existencia de sentiment2.es",hint_language_code="es").polarity
-        except Exception as ex:
-            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-            message = template.format(type(ex).__name__, ex.args)
-            print(message)
-            print("Installing Polyglot package language \n"
-                "(don't worry, this will only happen once)")
-            pl_download.download("sentiment2.es")
+        except:
+            #Destination where we will copy sentiment2 pickle
+            #This code of exception is designed to work on google app engine with /code/ as python root
+            #Comment it and install package manually for other platforms
+            print("sentiment2 not found. Copying...")
+            parent_dest=str(downloader.default_download_dir())
+
+            if not os.path.isdir(parent_dest + "/sentiment2/es"):
+                createdPath1=parent_dest+"/sentiment2/es"
+                os.makedirs(createdPath1)
+
+            copyfile(str(os.getcwd())+"/processing/es.sent.pkl.tar.bz2", createdPath1+"/es.sent.pkl.tar.bz2")
+            print("copy finished")
         return numpy.concatenate([singleSampleProcessPipeline(doc, nlp) for doc in X])
