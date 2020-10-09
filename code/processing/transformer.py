@@ -66,7 +66,7 @@ def singleSampleProcessPipeline(sampleText, spacy_model_instance):
     return vector.reshape(1,-1)
 
 class WordVectorizerPipeline(TransformerMixin, BaseEstimator):
-    def __init__(self, model="es_core_news_lg"):
+    def __init__(self, model="es_core_news_md"):
         self.model = model
 
     def fit(self, X, y=None):
@@ -79,7 +79,7 @@ class WordVectorizerPipeline(TransformerMixin, BaseEstimator):
         print("evaluating sentiment2 model before transforming")
         #Evaluating if polyglot sentiment module exist
         try:
-            text = Text("Evaluando existencia de sentiment2.es",hint_language_code="es").polarity
+            Text("Evaluando existencia de sentiment2.es",hint_language_code="es").polarity
         except:
             #Destination where we will copy sentiment2 pickle
             #This code of exception is designed to work on google app engine with /code/ as python root
