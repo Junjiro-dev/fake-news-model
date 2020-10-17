@@ -1,4 +1,6 @@
 from flask import Flask,jsonify,request
+from flask_cors import CORS
+
 from processing.data_management import load_pipeline
 import joblib
 import pickle
@@ -11,6 +13,7 @@ from polyglot.mapping import embeddings
 
 
 app = Flask(__name__)
+CORS(app)
 
 fake_news_trained_pipeline = load_pipeline()
 
