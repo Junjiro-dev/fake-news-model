@@ -11,7 +11,7 @@ from polyglot.text import Text
 import os
 from polyglot.mapping import embeddings
 
-
+#Run script with /code/ as root
 app = Flask(__name__)
 CORS(app)
 
